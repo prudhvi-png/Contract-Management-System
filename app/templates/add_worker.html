@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="card">
+  <h2>Add Worker</h2>
+
+  {% if error %}
+  <p class="error">{{ error }}</p>
+  {% endif %}
+
+  <form action="/workers/new" method="post" enctype="multipart/form-data" class="form-grid">
+    <label>Name
+      <input type="text" name="name" required />
+    </label>
+
+    <label>Contract Start
+      <input type="date" name="contract_start" required />
+    </label>
+
+    <label>Contract End
+      <input type="date" name="contract_end" required />
+    </label>
+
+    <label>Photo
+      <input type="file" name="photo" accept="image/png, image/jpeg" required />
+    </label>
+
+    <button type="submit">Create Worker</button>
+  </form>
+</section>
+{% endblock %}

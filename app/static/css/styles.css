@@ -1,0 +1,102 @@
+:root {
+  color-scheme: light;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f6f8fa;
+  color: #1f2937;
+}
+
+header {
+  background: #0f172a;
+  color: white;
+  padding: 16px 24px;
+}
+
+nav a {
+  color: #bfdbfe;
+  margin-right: 16px;
+  text-decoration: none;
+}
+
+main {
+  padding: 24px;
+}
+
+.card {
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  max-width: 520px;
+}
+
+.form-grid {
+  display: grid;
+  gap: 12px;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+}
+
+input,
+button {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+}
+
+button {
+  background: #0ea5e9;
+  color: white;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+th,
+td {
+  border: 1px solid #e2e8f0;
+  padding: 10px;
+  text-align: left;
+}
+
+.thumb {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 999px;
+  color: white;
+  font-size: 12px;
+}
+
+.badge.active {
+  background: #16a34a;
+}
+
+.badge.expired {
+  background: #dc2626;
+}
+
+.success {
+  color: #166534;
+}
+
+.error {
+  color: #b91c1c;
+}
