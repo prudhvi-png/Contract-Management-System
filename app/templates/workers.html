@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section>
+  <h2>Workers</h2>
+  {% if message %}
+  <p class="success">{{ message }}</p>
+  {% endif %}
+
+  <table>
+    <thead>
+      <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Contract</th>
+        <th>Status</th>
+        <th>Photo</th>
+        <th>QR</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for worker in workers %}
+      <tr>
+        <td>{{ worker.worker_code }}</td>
+        <td>{{ worker.name }}</td>
+        <td>{{ worker.contract_start }} → {{ worker.contract_end }}</td>
+        <td>
+          {% if worker.contract_end < today %}
+            <span class="badge expired">Expired</span>
+          {% else %}
+            <span class="badge active">Active</span>
+          {% endif %}
+        </td>
+        <td><img src="{{ worker.photo_path }}" alt="{{ worker.name }} photo" class="thumb" /></td>
+        <td><img src="{{ worker.qr_path }}" alt="{{ worker.worker_code }} QR" class="thumb" /></td>
+      </tr>
+      {% else %}
+      <tr>
+        <td colspan="6">No workers yet. Add one from the form.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endblock %}
