@@ -14,13 +14,22 @@ templates = Jinja2Templates(directory="app/templates")
 
 
 @router.get("/")
-def home(request: Request, db: Session = Depends(get_db)):
-    workers = list_workers(db)
+def home(request: Request):
+    workers = [
+        {
+            "id": 1,
+            "name": "Test Worker",
+            "contract_start": date(2024, 1, 1),
+            "contract_end": date(2025, 1, 1),
+        }
+    ]
+
     today = date.today()
+
     return templates.TemplateResponse(
-        request,
         "workers.html",
         {
+            "request": request,
             "workers": workers,
             "today": today,
             "message": request.query_params.get("message"),
@@ -43,7 +52,7 @@ def add_worker_submit(
     contract_start: date = Form(...),
     contract_end: date = Form(...),
     photo: UploadFile = File(...),
-    db: Session = Depends(get_db),
+    
 ):
     try:
         create_worker(

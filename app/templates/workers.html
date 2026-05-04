@@ -25,7 +25,7 @@
         <td>{{ worker.name }}</td>
         <td>{{ worker.contract_start }} → {{ worker.contract_end }}</td>
         <td>
-          {% if worker.contract_end < today %}
+          {% if worker.contract_end and worker.contract_end < today %}
             <span class="badge expired">Expired</span>
           {% else %}
             <span class="badge active">Active</span>
