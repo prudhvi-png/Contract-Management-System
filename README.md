@@ -96,3 +96,8 @@ Response includes:
 - Photos are saved under `app/static/photos/`.
 - QR files are saved under `app/static/qrcodes/`.
 - SQLAlchemy auto-creates tables at startup (`Base.metadata.create_all`) if they do not exist.
+
+## Images
+
+<img width="1920" height="1080" alt="Screenshot (15)" src="https://github.com/user-attachments/assets/e2ac4b6c-c0ec-450c-9e8e-8287afb98d3f" />
+
